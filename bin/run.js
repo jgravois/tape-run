@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 var run = require('..');
-var optimist = require('optimist');
 var spawn = require('child_process').spawn;
+var yargs = require('yargs/yargs')
 
-var argv = optimist
+var argv = yargs(process.argv.slice(2))
   .usage('Pipe a browserify stream into this.\nbrowserify [opts] [files] | $0 [opts]')
 
   .describe('wait', 'Timeout for tap-finished')
@@ -36,14 +36,11 @@ var argv = optimist
 
   .describe('basedir', 'Set this if you need to require node modules in node mode')
 
+  .help('h')
   .describe('help', 'Print usage instructions')
   .alias('h', 'help')
 
   .argv;
-
-if (argv.help) {
-  return optimist.showHelp();
-}
 
 var runner = run(argv);
 

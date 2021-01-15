@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "@juliangruber/tap-finished": "0.0.2",
-    "browser-run": "^8.0.0",
-    "optimist": "~0.6.1",
+    "browser-run": "^9.0.0",
     "through": "~2.3.4",
-    "throughout": "0.0.0"
+    "throughout": "0.0.0",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "browserify": "^14.0.0",
